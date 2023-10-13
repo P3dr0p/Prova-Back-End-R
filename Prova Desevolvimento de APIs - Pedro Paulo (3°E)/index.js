@@ -1,5 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+const mysql2 = require('mysql2')
 const PORT = 3333
 //Importar o módulo conn para as operações com o banco
 
