@@ -18,7 +18,7 @@ app.get('/', (request, response)=>{
 })
 
 app.post("/livros/insertbooks", (request, response) => {
-  const { titulo,  ,descricao } = request.body
+  const { titulo, categoria, descricao, preco, quantidade } = request.body
 
   const sql = `INSERT INTO books(title, numero_paginas) VALUES('${title}', ${numero_paginas});`
 
