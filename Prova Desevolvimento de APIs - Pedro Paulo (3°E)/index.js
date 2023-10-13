@@ -32,7 +32,7 @@ app.post("/livro/insertlivro", (request, response) => {
   });
 });
 
-app.get("/books", (request, response) => {
+app.get("/livro", (request, response) => {
   const sql = `SELECT * FROM books`
   connection.query(sql, (error) => {
       if(error) {
@@ -45,7 +45,7 @@ app.get("/books", (request, response) => {
   });
 });
 
-app.get("/livros/:id", (request, response) => {
+app.get("/livro/:id", (request, response) => {
   const { id } = request.params
 
   const sql = `SELECT * FROM books WHERE = ${id};`
