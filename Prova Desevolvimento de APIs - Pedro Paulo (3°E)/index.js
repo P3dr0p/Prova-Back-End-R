@@ -17,8 +17,8 @@ app.get('/', (request, response)=>{
   return response.render('home')
 })
 
-app.post("/books/insertbooks", (request, response) => {
-  const { title, numero_paginas } = request.body
+app.post("/livros/insertbooks", (request, response) => {
+  const { nome, descricao } = request.body
 
   const sql = `INSERT INTO books(title, numero_paginas) VALUES('${title}', ${numero_paginas});`
 
@@ -38,13 +38,13 @@ app.get("/books", (request, response) => {
           console.log(error);
       }
 
-      const books = data
+      const livros = data
 
       return response.render('books', {books});
   });
 });
 
-app.get("/books/:id", (request, response) => {
+app.get("/livros/:id", (request, response) => {
   const { id } = request.params
 
   const sql = `SELECT * FROM books WHERE = ${id};`
