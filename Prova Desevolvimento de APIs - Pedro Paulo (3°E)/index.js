@@ -18,7 +18,7 @@ app.get('/', (request, response)=>{
 })
 
 app.post("/livros/insertbooks", (request, response) => {
-  const { nome, descricao } = request.body
+  const { titulo,  ,descricao } = request.body
 
   const sql = `INSERT INTO books(title, numero_paginas) VALUES('${title}', ${numero_paginas});`
 
@@ -38,7 +38,7 @@ app.get("/books", (request, response) => {
           console.log(error);
       }
 
-      const livros = data
+      const livro = data
 
       return response.render('books', {books});
   });
@@ -54,9 +54,9 @@ app.get("/livros/:id", (request, response) => {
           console.log(error);
       }
 
-      const book = data;
+      const livro = data;
 
-      return response.render("book", {book});
+      return response.render("livro", {livro});
   });
 });
 
